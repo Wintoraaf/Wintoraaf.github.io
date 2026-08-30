@@ -1,63 +1,738 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wintoraaf | Connect With Me</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-<style>
-body{margin:0;font-family:Arial,sans-serif;background:linear-gradient(135deg,#050505,#222);color:white;display:flex;justify-content:center;align-items:center;min-height:100vh}
-.card{width:380px;background:#111;border:1px solid #C8A24D;border-radius:24px;padding:28px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.5)}
-.avatar{width:90px;height:90px;border-radius:50%;border:2px solid #C8A24D;margin:auto;display:flex;align-items:center;justify-content:center;font-size:38px;font-weight:bold;color:#C8A24D}
-.avatar img{width:100%;height:100%;object-fit:contain;border-radius:50%}
-h1{margin:14px 0 4px;letter-spacing:2px}
-.gold{color:#C8A24D}
-.btn{display:block;margin:12px 0;padding:14px;border-radius:12px;text-decoration:none;color:white;background:#1f1f1f;border:1px solid #333;font-weight:bold}
-  .btn i{
-    width:32px;
-    text-align:center;
-    font-size:20px;
-    color:#fff;
-}
-.btn:hover{background:#2d2d2d;border-color:#C8A24D}
-.qr{width:170px;height:170px;background:white;padding:8px;border-radius:12px;margin:18px auto 10px}
-.small{font-size:11px;color:#bbb;line-height:1.4}
-.avatar{width:90px;height:90px;border-radius:50%;border:2px solid #C8A24D;margin:auto;display:flex;align-items:center;justify-content:center;background:white;overflow:hidden}code{color:#C8A24D;background:#1b1b1b;padding:2px 6px;border-radius:6px}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Wintoraaf | Beranda</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #000;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(0,0,0,0.95);
+            border-bottom: 1px solid #C8A24D;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 20px;
+        }
+
+        .brand {
+            color: #C8A24D;
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .menu {
+            display: flex;
+            gap: 22px;
+        }
+
+        .menu a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .menu a:hover {
+            color: #C8A24D;
+        }
+
+        /* ================= UMUM ================= */
+
+        .container {
+            width: 100%;
+            max-width: 1050px;
+            margin: auto;
+            padding: 70px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #C8A24D;
+            font-size: 28px;
+            margin-bottom: 35px;
+            letter-spacing: 1px;
+        }
+
+        .card {
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        /* ================= BERANDA ================= */
+
+        #beranda {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero {
+            max-width: 800px;
+        }
+
+        .avatar {
+            width: 130px;
+            height: 130px;
+            margin: 0 auto 25px;
+            border-radius: 50%;
+            background: #fff;
+            border: 3px solid #C8A24D;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero h1 {
+            margin: 10px 0;
+            font-size: 42px;
+            letter-spacing: 5px;
+        }
+
+        .hero h2 {
+            color: #C8A24D;
+            font-size: 21px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: #ccc;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .hero-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 13px 25px;
+            border-radius: 10px;
+            background: #C8A24D;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .hero-button:hover {
+            background: #fff;
+        }
+
+        /* ================= TENTANG ================= */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .card h3 {
+            color: #C8A24D;
+            margin-top: 0;
+        }
+
+        /* ================= PROGRAM ================= */
+
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .program-card {
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .program-card i {
+            font-size: 35px;
+            color: #C8A24D;
+            margin-bottom: 15px;
+        }
+
+        .program-card h3 {
+            color: #fff;
+        }
+
+        /* ================= KEGIATAN ================= */
+
+        .activity {
+            border-left: 3px solid #C8A24D;
+            padding-left: 20px;
+            margin-bottom: 25px;
+        }
+
+        .activity h3 {
+            color: #C8A24D;
+            margin-bottom: 5px;
+        }
+
+        /* ================= GALERI ================= */
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .gallery-item {
+            height: 180px;
+            background: #151515;
+            border: 1px solid #333;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            text-align: center;
+        }
+
+        /* ================= KONTAK ================= */
+
+        .social-buttons {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            width: 100%;
+            margin: 12px 0;
+            padding: 15px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #fff;
+            background: #111;
+            border: 1px solid #333;
+            font-weight: bold;
+        }
+
+        .btn i {
+            width: 30px;
+            text-align: center;
+            font-size: 21px;
+        }
+
+        .btn:hover {
+            border-color: #C8A24D;
+            background: #222;
+        }
+
+        /* ================= QR ================= */
+
+        .qr-section {
+            text-align: center;
+            margin-top: 45px;
+        }
+
+        .qr-section h3 {
+            color: #C8A24D;
+        }
+
+        .qr {
+            width: 200px;
+            height: 200px;
+            padding: 10px;
+            background: #fff;
+            border-radius: 12px;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            text-align: center;
+            border-top: 1px solid #333;
+            padding: 30px 20px;
+            color: #999;
+            font-size: 13px;
+        }
+
+        footer strong {
+            color: #C8A24D;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 768px) {
+
+            .nav-container {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .menu {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .menu a {
+                font-size: 12px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .program-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .container {
+                padding: 55px 16px;
+            }
+
+            .hero h1 {
+                font-size: 27px;
+                letter-spacing: 3px;
+            }
+
+            .hero h2 {
+                font-size: 17px;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .avatar {
+                width: 110px;
+                height: 110px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-<div class="card">
-<div class="avatar">
-<img src="hp.png" alt="Logo Hitam Putih">
-</div>
-<h1>WINTORAAF</h1>
-<div class="gold">CONNECT WITH ME</div>
 
-<a class="btn" href="https://www.tiktok.com/@wintoraaf" target="_blank">
-<i class="fa-brands fa-tiktok"></i> TikTok @wintoraaf
-</a>
+<!-- ================= NAVIGASI ================= -->
 
-<a class="btn" href="https://www.facebook.com/wintoraaf" target="_blank">
-<i class="fa-brands fa-facebook"></i> Facebook @wintoraaf
-</a>
+<nav>
+    <div class="nav-container">
 
-<a class="btn" href="https://www.instagram.com/bnw_wintoraaf" target="_blank">
-<i class="fa-brands fa-instagram"></i> Instagram bnw_wintoraaf
-</a>
+        <div class="brand">
+            WINTORAAF
+        </div>
 
-<a class="btn" href="mailto:wilhelmuswintokolyaan@gmail.com">
-<i class="fa-solid fa-envelope"></i> Email Saya
-</a>
+        <div class="menu">
+            <a href="#beranda">Beranda</a>
+            <a href="#tentang">Tentang Kami</a>
+            <a href="#program">Program</a>
+            <a href="#kegiatan">Kegiatan</a>
+            <a href="#galeri">Galeri</a>
+            <a href="#kontak">Kontak</a>
+        </div>
 
-<h3 class="gold">Scan QR Code</h3>
-<img class="qr" src="QR_Wintoraaf_Permanen.png" alt="QR Code Wintoraaf">
+    </div>
+</nav>
 
-<p class="small">QR ini saat ini mengarah ke:<br><code>https://USERNAME.github.io/wintoraaf/</code></p>
-<p class="small"><b>Cara final:</b> cukup ganti variabel <code>PUBLIC_URL</code> dengan URL GitHub Pages Anda, lalu buat ulang QR menggunakan URL tersebut.</p>
 
-<script>
-const PUBLIC_URL = "https://USERNAME.github.io/wintoraaf/";
-</script>
-</div>
+<!-- ================= BERANDA ================= -->
+
+<section id="beranda">
+
+    <div class="hero">
+
+        <div class="avatar">
+            <img src="hp.png" alt="Logo Wintoraaf">
+        </div>
+
+        <h1>WINTORAAF</h1>
+
+        <h2>IKUTI SAYA</h2>
+
+        <p>
+            Selamat datang di halaman resmi Wintoraaf.
+            Ruang informasi, kreativitas, karya, kegiatan,
+            dan komunikasi.
+        </p>
+
+        <a class="hero-button" href="#tentang">
+            Kenali Wintoraaf
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= TENTANG KAMI ================= -->
+
+<section id="tentang">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            TENTANG KAMI
+        </h2>
+
+        <div class="about-grid">
+
+            <div class="card">
+
+                <h3>Profil Wintoraaf</h3>
+
+                <p>
+                    Wintoraaf merupakan ruang untuk membangun
+                    kreativitas, komunikasi, literasi, karya,
+                    dan kegiatan yang memberikan manfaat
+                    bagi masyarakat.
+                </p>
+
+                <p>
+                    Website ini menjadi pusat informasi mengenai
+                    profil, program, kegiatan, galeri, dan
+                    hubungan dengan Wintoraaf.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Visi</h3>
+
+                <p>
+                    Menjadi wadah yang kreatif, profesional,
+                    berintegritas, dan bermanfaat bagi
+                    masyarakat serta bangsa.
+                </p>
+
+                <h3>Misi</h3>
+
+                <ul>
+                    <li>Mendorong kreativitas dan inovasi.</li>
+                    <li>Meningkatkan literasi dan pengetahuan.</li>
+                    <li>Membangun kolaborasi dan komunikasi.</li>
+                    <li>Menghasilkan karya yang bermanfaat.</li>
+                    <li>Berperan dalam kegiatan sosial.</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROGRAM ================= -->
+
+<section id="program">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            PROGRAM
+        </h2>
+
+        <div class="program-grid">
+
+            <div class="program-card">
+                <i class="fa-solid fa-lightbulb"></i>
+                <h3>Kreativitas</h3>
+                <p>
+                    Pengembangan ide, kreativitas,
+                    desain, dan karya inovatif.
+                </p>
+            </div>
+
+            <div class="program-card">
+                <i class="fa-solid fa-book-open"></i>
+                <h3>Literasi</h3>
+                <p>
+                    Mendorong budaya membaca, menulis,
+                    dan berbagi pengetahuan.
+                </p>
+            </div>
+
+            <div class="program-card">
+                <i class="fa-solid fa-video"></i>
+                <h3>Media</h3>
+                <p>
+                    Pengembangan informasi, dokumentasi,
+                    fotografi, dan video.
+                </p>
+            </div>
+
+            <div class="program-card">
+                <i class="fa-solid fa-users"></i>
+                <h3>Pengembangan SDM</h3>
+                <p>
+                    Membangun kemampuan dan potensi
+                    sumber daya manusia.
+                </p>
+            </div>
+
+            <div class="program-card">
+                <i class="fa-solid fa-handshake"></i>
+                <h3>Kolaborasi</h3>
+                <p>
+                    Membangun kerja sama dengan berbagai
+                    pihak untuk kegiatan positif.
+                </p>
+            </div>
+
+            <div class="program-card">
+                <i class="fa-solid fa-heart"></i>
+                <h3>Kegiatan Sosial</h3>
+                <p>
+                    Berpartisipasi dalam kegiatan
+                    sosial dan kemasyarakatan.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= KEGIATAN ================= -->
+
+<section id="kegiatan">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            KEGIATAN
+        </h2>
+
+        <div class="card">
+
+            <div class="activity">
+
+                <h3>Kegiatan Wintoraaf</h3>
+
+                <p>
+                    Halaman ini akan digunakan untuk
+                    menampilkan berbagai kegiatan,
+                    acara, pelatihan, karya, dan aktivitas
+                    Wintoraaf.
+                </p>
+
+            </div>
+
+
+            <div class="activity">
+
+                <h3>Dokumentasi Kegiatan</h3>
+
+                <p>
+                    Foto, video, tanggal, lokasi, dan
+                    cerita kegiatan dapat ditambahkan
+                    pada bagian ini.
+                </p>
+
+            </div>
+
+
+            <div class="activity">
+
+                <h3>Kolaborasi</h3>
+
+                <p>
+                    Berbagai kegiatan bersama masyarakat,
+                    organisasi, lembaga, maupun komunitas
+                    dapat ditampilkan di sini.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= GALERI ================= -->
+
+<section id="galeri">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            GALERI
+        </h2>
+
+        <div class="gallery">
+
+            <div class="gallery-item">
+                Foto Kegiatan 1
+            </div>
+
+            <div class="gallery-item">
+                Foto Kegiatan 2
+            </div>
+
+            <div class="gallery-item">
+                Foto Kegiatan 3
+            </div>
+
+            <div class="gallery-item">
+                Foto Kegiatan 4
+            </div>
+
+            <div class="gallery-item">
+                Foto Kegiatan 5
+            </div>
+
+            <div class="gallery-item">
+                Foto Kegiatan 6
+            </div>
+
+        </div>
+
+        <p style="text-align:center;color:#777;margin-top:20px;">
+            Foto kegiatan dapat ditambahkan kemudian.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= KONTAK ================= -->
+
+<section id="kontak">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            KONTAK
+        </h2>
+
+        <div class="social-buttons">
+
+            <a class="btn"
+               href="https://www.tiktok.com/@wintoraaf"
+               target="_blank">
+                <i class="fa-brands fa-tiktok"></i>
+                <span>TikTok @wintoraaf</span>
+            </a>
+
+
+            <a class="btn"
+               href="https://www.facebook.com/wintoraaf"
+               target="_blank">
+                <i class="fa-brands fa-facebook"></i>
+                <span>Facebook @wintoraaf</span>
+            </a>
+
+
+            <a class="btn"
+               href="https://www.instagram.com/bnw_wintoraaf"
+               target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+                <span>Instagram @bnw_Wintoraaf</span>
+            </a>
+
+
+            <a class="btn"
+               href="mailto:wilhelmuswintokolyaan@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+                <span>Kirim Email</span>
+            </a>
+
+        </div>
+
+
+        <!-- QR CODE -->
+
+        <div class="qr-section">
+
+            <h3>PINDAI QR CODE</h3>
+
+            <p>
+                Pindai QR Code untuk mengunjungi
+                halaman Wintoraaf.
+            </p>
+
+            <img class="qr"
+                 src="QR_Wintoraaf_Permanen.png"
+                 alt="QR Code Wintoraaf">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <strong>WINTORAAF</strong>
+
+    <br>
+
+    Berkarya dengan Hati, Bermanfaat bagi Negeri.
+
+    <br><br>
+
+    © 2026 Wintoraaf. Semua Hak Dilindungi.
+
+</footer>
+
+
 </body>
 </html>
